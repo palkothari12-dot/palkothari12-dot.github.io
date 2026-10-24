@@ -4,10 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>For Atharva ❤️</title>
-  <!-- Google Fonts for typography -->
+  <!-- Google Fonts for Times / Serif Aesthetic -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+  
   <style>
     :root {
       --bg: #fff5f5;
@@ -15,64 +16,98 @@
       --accent: #e53e3e;
       --accent-hover: #c53030;
       --text: #2d3748;
-      --muted: #718096;
     }
+
     body {
       margin: 0;
-      padding: 20px;
-      font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      padding: 30px 15px;
+      font-family: "Times New Roman", Times, "Playfair Display", Georgia, serif;
       background-color: var(--bg);
       color: var(--text);
       display: flex;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
     }
+
+    /* FLOATING HEARTS ANIMATION BACKGROUND */
+    .bg-hearts {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .heart-particle {
+      position: absolute;
+      bottom: -10%;
+      color: rgba(229, 62, 62, 0.25);
+      font-size: 1.5rem;
+      animation: floatUp 8s linear infinite;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0.8;
+      }
+      100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
     .container {
-      max-width: 650px;
+      max-width: 680px;
       width: 100%;
       background: var(--card);
       border-radius: 20px;
-      padding: 35px 30px;
+      padding: 40px 30px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.08);
       text-align: center;
       position: relative;
+      z-index: 1;
+      border: 1px solid #ffe3e3;
     }
+
     h1 {
-      font-family: 'Playfair Display', Georgia, serif;
+      font-family: "Times New Roman", Times, Georgia, serif;
       color: var(--accent);
-      font-size: 2.2rem;
-      margin-bottom: 20px;
+      font-size: 2.3rem;
+      margin-bottom: 25px;
       font-weight: 700;
+      letter-spacing: 0.5px;
     }
-    .photo-frame {
-      margin: 20px 0;
-    }
-    .photo-frame img {
-      max-width: 250px;
-      width: 100%;
-      border-radius: 15px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    }
+
     .letter {
       text-align: left;
-      line-height: 1.7;
-      font-size: 0.98rem;
-      color: #4a5568;
+      line-height: 1.8;
+      font-size: 1.05rem;
+      color: #333333;
       background: #fffaf0;
       border-left: 4px solid #ed8936;
-      padding: 22px;
+      padding: 25px;
       border-radius: 12px;
       margin-bottom: 25px;
+      box-shadow: inset 0 0 10px rgba(0,0,0,0.01);
     }
+
     .letter h2 {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 1.25rem;
+      font-family: "Times New Roman", Times, Georgia, serif;
+      font-size: 1.3rem;
       color: #dd6b20;
-      margin-top: 18px;
-      margin-bottom: 6px;
+      margin-top: 20px;
+      margin-bottom: 8px;
+      border-bottom: 1px dashed #fbd38d;
+      padding-bottom: 4px;
     }
-    
+
     /* CUSTOM ELEGANT QUOTE BOX */
     .quote-box {
       background: #fff0f3;
@@ -83,6 +118,7 @@
       box-shadow: 0 4px 12px rgba(229, 62, 62, 0.08);
       position: relative;
     }
+
     .quote-box::before {
       content: "“";
       font-size: 4.5rem;
@@ -90,65 +126,185 @@
       position: absolute;
       top: -12px;
       left: 10px;
-      font-family: 'Playfair Display', Georgia, serif;
+      font-family: "Times New Roman", Times, serif;
       line-height: 1;
     }
+
     .quote-title {
-      font-family: 'Playfair Display', Georgia, serif;
+      font-family: "Times New Roman", Times, Georgia, serif;
       font-weight: 700;
       color: #9b2c2c;
-      font-size: 1.15rem;
+      font-size: 1.2rem;
       margin-bottom: 10px;
       padding-left: 20px;
     }
+
     .quote-text {
       color: #742a2a;
-      font-size: 0.98rem;
+      font-size: 1.05rem;
       line-height: 1.7;
       margin: 0;
       padding-left: 20px;
       font-style: italic;
     }
+
     .quote-hindi {
-      font-family: 'Playfair Display', Georgia, serif;
+      font-family: "Times New Roman", Times, Georgia, serif;
       margin-top: 14px;
       padding-left: 20px;
       color: #c53030;
-      font-weight: 600;
+      font-weight: 700;
       font-style: italic;
-      font-size: 1.05rem;
+      font-size: 1.1rem;
     }
 
     .offerings-heading {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 1.4rem;
+      font-family: "Times New Roman", Times, Georgia, serif;
+      font-size: 1.5rem;
       color: var(--accent);
-      margin-top: 25px;
+      margin-top: 30px;
+      margin-bottom: 15px;
     }
 
     .offerings {
       margin: 20px 0;
       text-align: left;
     }
+
     .offering-option {
       background: #f7fafc;
       border: 2px solid #e2e8f0;
-      padding: 14px 18px;
+      padding: 16px 20px;
       border-radius: 12px;
       margin-bottom: 12px;
       cursor: pointer;
       transition: all 0.2s ease;
-      font-weight: 500;
+      font-size: 1.05rem;
     }
+
     .offering-option:hover {
       border-color: var(--accent);
       background: #fff5f5;
     }
+
     .btn-truce {
       background: var(--accent);
       color: white;
       border: none;
-      padding: 14px 32px;
-      font-size: 1.1rem;
-      font-weight: 600;
-      border-radius: 30
+      padding: 16px 36px;
+      font-size: 1.15rem;
+      font-weight: bold;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.1s ease;
+      margin-top: 15px;
+      font-family: "Times New Roman", Times, Georgia, serif;
+      box-shadow: 0 4px 15px rgba(229, 62, 62, 0.3);
+    }
+
+    .btn-truce:hover {
+      background: var(--accent-hover);
+      transform: scale(1.02);
+    }
+
+    .hidden-message {
+      display: none;
+      margin-top: 25px;
+      padding: 20px;
+      background: #feebc8;
+      border-radius: 12px;
+      color: #742a2a;
+      font-weight: bold;
+      font-size: 1.15rem;
+      border: 1px solid #fbd38d;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- BACKGROUND FLOATING HEARTS -->
+  <div class="bg-hearts" id="heartsBg"></div>
+
+  <div class="container">
+    <h1>Hey Teddy... Can We Talk? ❤️</h1>
+
+    <div class="letter">
+      <p><strong>Dear Atharva,</strong></p>
+      <p>I built this page for you because I didn’t want another phone call or text to get misunderstood. I wanted to pause, step away from the noise, and speak to you straight from my heart.</p>
+
+      <h2>Where I was coming from...</h2>
+      <p>When we were on that call and I was eating, I spoke to you naturally. When you called it "disrespectful," it agitated me—not because I wanted to disrespect you, but because I felt we were at a comfort level where those tiny formal boundary lines wouldn't come between us. Yes, I agree that speaking while eating isn't ideal etiquette, but haven't we all done it around family or close friends? It happened just that once, and I was teasing you because you're my boyfriend and I thought you'd understand. I'm not perfect, but I was just being completely real with you.</p>
+
+      <h2>About that night & the "suffocating" comment...</h2>
+      <p>That night, when you were half-asleep, I panicked because I felt like I couldn't be my natural self without being judged. When I used words like "fake affection" or said I felt "suffocated," I didn't mean I want to leave. I meant I was scared of losing the safe space where I can just <em>be me</em>. When you said, <em>"Palak, if you're suffocating then there's no point,"</em> it broke my heart because I felt like you were letting go of my hand.</p>
+
+      <h2>The T-shirt conversation & where we are now...</h2>
+      <p>Today when things escalated and I brought up the comfort level again (even making that remark about the T-shirt), and you coldly replied <em>"Ha, okay"</em>, my head just spun. It felt like you were becoming completely unapproachable and harsh. It hurt so much to feel that distance growing between us over something that started so small.</p>
+
+      <h2>What I need you to know:</h2>
+      <p>You often feel like I don't show enough affection to you. But Atharva, I <em>do</em> like you, and I <em>do</em> care for you deeply. Expressing affection doesn't always come easily or perfectly to me, but I am trying my absolute best. If I am going out of my way to create a safe, comfortable space for you, all I ask is for you to walk one step toward me too.</p>
+
+      <p>Please... let's stop making this <strong>Palak vs. Atharva</strong>. It’s <strong>Palak + Atharva vs. the Problem</strong>. We have such a beautiful bond; why are we letting stubbornness, misunderstandings, and ego ruin it?</p>
+
+      <p>When I call you my <strong>Teddy Bear</strong>, I don't just say it for the sake of saying it. I truly mean it. You are my safe, comfortable person. I don't want you to change your entire identity—I just want my old Atharva back, the one who considers my opinion, values my perspective, and lets me be my natural self without pretense.</p>
+
+      <!-- HIGHLIGHTED QUOTE BOX -->
+      <div class="quote-box">
+        <div class="quote-title">Atharva, please remember this:</div>
+        <p class="quote-text">
+          I am completely comfortable with you, and I truly mean it. You could never make me feel suffocated or uncomfortable. Those things I brought up—like the T-shirt and other private comfort moments—were purely analogies to show you how close and secure I feel around you. I am more comfortable with you than I could ever be with anyone else.
+        </p>
+        <p class="quote-hindi">
+          "I don't want any one of us to leave each other's hand, especially on such a trivial matter." ❤️🤝
+        </p>
+      </div>
+
+      <p>I love our bond too much to let a foolish fight weaken us. Can we please drop the weapons and just be us again? 🧸🙈❤️</p>
+    </div>
+
+    <h3 class="offerings-heading">Pick a Peace Offering 🕊️</h3>
+    <div class="offerings">
+      <div class="offering-option" onclick="selectOffering(this)">🫂 A virtual long hug</div>
+      <div class="offering-option" onclick="selectOffering(this)">♟️ A game of chess</div>
+    </div>
+
+    <button class="btn-truce" onclick="acceptTruce()">I Accept the Truce 🤝❤️</button>
+
+    <div id="confirmation" class="hidden-message">
+      Truce accepted! I can't wait to connect with you! 🙈❤️🧸
+    </div>
+  </div>
+
+  <script>
+    // Create floating heart particles in background
+    const bgContainer = document.getElementById('heartsBg');
+    const heartSymbols = ['❤️', '💖', '💕', '💗', '🧸'];
+
+    for (let i = 0; i < 25; i++) {
+      const heart = document.createElement('div');
+      heart.className = 'heart-particle';
+      heart.innerText = heartSymbols[Math.floor(Math.random() * heartSymbols.length)];
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = (Math.random() * 5 + 5) + 's';
+      heart.style.animationDelay = (Math.random() * 5) + 's';
+      heart.style.fontSize = (Math.random() * 1 + 1) + 'rem';
+      bgContainer.appendChild(heart);
+    }
+
+    function selectOffering(element) {
+      document.querySelectorAll('.offering-option').forEach(el => {
+        el.style.borderColor = '#e2e8f0';
+        el.style.background = '#f7fafc';
+      });
+      element.style.borderColor = '#e53e3e';
+      element.style.background = '#fff5f5';
+    }
+
+    function acceptTruce() {
+      document.getElementById('confirmation').style.display = 'block';
+      alert('Truce accepted! ❤️🙈');
+    }
+  </script>
+
+</body>
+</html>
